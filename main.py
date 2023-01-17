@@ -18,7 +18,8 @@ def health_check():
 def calculate(x: int, y: int, z: Optional[int]):
     # The above parameters (x, y & z) of the function are query or route parameters passed in the request
     # we can mark an parameter as optional i.e. either query or route parameter using the Optional keyword.
-    value = (x + y) * z if z else x + y
+    if z == 0:
+        return fastapi.Response(content='Invalid value for z', status_code=400)
     return {
         'value': value
     }
