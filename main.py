@@ -15,8 +15,9 @@ def health_check():
 
 
 @app.get('/api/calculate')
-def calculate():
-    value = 2 + 2
+def calculate(x: int, y: int, z: int):
+    # The above parameters of the function are the query parameters passed of the request
+    value = (x + y) * z
     return {
         'value': value
     }
