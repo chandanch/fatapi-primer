@@ -15,9 +15,10 @@ def health_check():
 
 
 @app.get('/api/calculate')
-def calculate(x: int, y: int, z: int):
-    # The above parameters of the function are the query parameters passed of the request
-    value = (x + y) * z
+def calculate(x: int, y: int, z: Optional[int]):
+    # The above parameters (x, y & z) of the function are query or route parameters passed in the request
+    # we can mark an parameter as optional i.e. either query or route parameter using the Optional keyword.
+    value = (x + y) * z if z else x + y
     return {
         'value': value
     }
