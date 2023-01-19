@@ -17,10 +17,10 @@ def health_check():
 
 @app.get("/api/calculate")
 def calculate(x: int, y: int, z: Optional[int] = None):
-    # The above parameters (x, y & z) of the function are
-    # query or route parameters passed in the request
-    # we can mark an parameter as optional i.e.
-    # either query or route parameter using the Optional keyword.
+    """ The above parameters (x, y & z) of the function are
+     query or route parameters passed in the request
+     we can mark an parameter as optional i.e.
+     either query or route parameter using the Optional keyword."""
     if z == 0:
         return fastapi.Response(content='value of z cannot be 0', status_code=400)
     value = x + y
