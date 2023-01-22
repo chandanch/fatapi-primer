@@ -33,6 +33,8 @@ def calculate(x: int, y: int, z: Optional[int] = None):
      query or route parameters passed in the request
      we can mark an parameter as optional i.e.
      either query or route parameter using the Optional keyword.
+     Type Hints: We have included type hints or type annotations to each parameter of the request.
+     Syntax: <variable_name>: <TYPE>, ex: score: int, name: str
     """
     if z == 0:
         # return fastapi.Response(
